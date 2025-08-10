@@ -35,21 +35,21 @@ VGGT는 특별한 3D 구조나 Inductive bias 없이, 일반적인 대형 Transf
 
 ## 2. 관련 연구
 
-**Structure-from-Motion**
+**Structure-from-Motion**  
 정적인 장면을 여러 시점에서 촬영한 이미지로 **카메라 파라미터**와 **sparse 3D Point Cloud** (사진마다 뚜렷하게 보이는 몇몇 특징점만 3D 위치 계산)를 추정하는 작업이다.  
-1. 이미지 매칭 - 2. triangulation - 3. Bundle Adjustment
+이미지 매칭 - triangulation - Bundle Adjustment
 최근엔 딥러닝이 keypoint Detection과 Image Matching(여러장에서 같은 물체의 같은 지점 찾기) 단계 개선했다.  
 -> 더 나아가 VGGSfM처럼 SfM 전체를 통합 학습하는 방식도 등장
 
-**Multi-view Stereo**
+**Multi-view Stereo**  
 MVS는 여러 장의 겹치는 이미지로부터 장면의 dense 3D 기하(장면 전체를 복원)를 재구성하는 방법이다.  
 카메라 파라미터는 SfM으로 미리 추정되어 있다고 가정한다.  
-1. 전통 수작업 기반 (handcrafted) - 2. 전역 최적화 기반 (global optimization) - 3. 학습 기반 (learning-based)
+전통 수작업 기반 (handcrafted) - 전역 최적화 기반 (global optimization) - 학습 기반 (learning-based) 세 가지의 방식이 존재한다.  
 특히 DUSt3R과 MASt3R는 카메라 파라미터 없이도 두 장의 이미지에서 정렬된 밀집 포인트 클라우드를 직접 예측한다. -> 기하학 단계 제거  
 단, 두 장만 처리 가능해 후처리가 항상 필요하는 단점이 존재한다.  
 VGGT는 이를 더 발전시킨 형태이다.
 
-**Tracking-Any-Point**
+**Tracking-Any-Point**   
 비디오의 임의 2D 포인트를 모든 프레임에서 추적하는 방법이다.  
 CoTracker -> 여러 포인트 간의 상관관계를 이용해 occlusion(가림) 상황에서도 추적 가능  
 DOT -> dense tracking 가능  
