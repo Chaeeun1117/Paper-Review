@@ -87,7 +87,8 @@ Depth maps, point maps(3D 좌표로 투영된 장면 포인트), Tracks(특정 �
 
 **3.1. 문제 정의**  
 
-<img width="417" height="63" alt="image" src="https://github.com/user-attachments/assets/437766c9-1bcf-4068-aa28-022c51a32721" />  
+<img width="417" height="63" alt="image" src="https://github.com/user-attachments/assets/437766c9-1bcf-4068-aa28-022c51a32721" />    
+
 VGGT의 트랜스포머는 각 이미지 I를 카메라 파라미터, 깊이 맵, 포인트 맵, 포인트 추적을 위한 C차원 feature grid로 매핑한다.  
 
 - 카메라 파라미터 g
